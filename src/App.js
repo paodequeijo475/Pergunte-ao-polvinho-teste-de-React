@@ -8,22 +8,24 @@ function App() {
     contagemlick()
   };
  function carregar () {
+    let corpo = document.getElementById('App')
     let imagem = document.getElementById('imagemaleatoria')
     let msg = document.getElementById('msg')
     let data = new Date()
-    let mensagemdehora = data.getHours() + ':' + data.getMinutes()
-    let horario = data.getHours
-    msg.innerHTML = `Agora são as ${mensagemdehora}`
+    let horariohora = data.getHours
+    let horas = String(data.getHours()).padStart(2, '0')
+    let minutos = String(data.getMinutes()).padStart(2, '0')
+    msg.innerHTML = `Agora são ${horas}:${minutos}`
 
-    if (horario >= 0 && horario < 12) {
-        imagem.src = 'https://drgabrielazzini.com.br/wp-content/uploads/2020/06/cfae8-1.jpg'
-        msg.innerHTML = `Agora são as ${mensagemdehora} Bom dia`
-    } else if (horario < 18) {
-        imagem.src = 'https://media-cdn.tripadvisor.com/media/photo-s/0f/34/3b/10/fim-de-tarde.jpg'
-        msg.innerHTML = `Agora são as ${mensagemdehora} Boa tarde`
+    if (horariohora < 12) {
+        imagem.src = 'https://images.pexels.com/photos/1237119/pexels-photo-1237119.jpeg?auto=compress&cs=tinysrgb&w=600'
+        corpo.style =  'background-image: linear-gradient(45deg,rgb(255, 228, 77),rgb(255, 159, 32))'
+    } else if (horariohora < 18) {
+        imagem.src = 'https://images.pexels.com/photos/48207/sunset-sky-sun-cloud-48207.jpeg?auto=compress&cs=tinysrgb&w=600'
+        corpo.style =  'background-image: linear-gradient(45deg,rgb(233, 150, 27),rgb(238, 62, 9))'
     } else {
-        imagem.src = 'https://static8.depositphotos.com/1052928/951/i/600/depositphotos_9517937-stock-photo-moon.jpg'
-        msg.innerHTML = `Agora são as ${mensagemdehora} Boa noite`
+        imagem.src = 'https://images.pexels.com/photos/771883/pexels-photo-771883.jpeg?auto=compress&cs=tinysrgb&w=600' 
+        corpo.style =  'background-image: linear-gradient(45deg,rgb(121, 186, 216),rgb(7, 53, 97))'
     }
 };
         const adivinha = () => {
@@ -50,26 +52,26 @@ function App() {
                 numero = 0
                 pontuacao.innerHTML = (`Para de clicar por favor , vai acabacar a memoria`)
                 img.src = 'https://http2.mlstatic.com/D_NQ_NP_838051-MLB45759777186_042021-O.jpg'
-            } 
+            }
         };
         return (
-          <body id="App" onLoad={carregar}>
-          <div id="primeiraparte">
-          <div className='msg' id="msg">Agora são horas</div>
+          <div id="App" onLoad={carregar}>
+          <div id="primeiraparte" className='primeiraparte'>
           <div id="foto">
-          <img className='imagemaleatoria' id="imagemaleatoria" src="imagem" alt='imagem'/>
+          <img className='imagemaleatoria' id="imagemaleatoria"  src="imagem" alt='imagem' />
           </div>
+          <div className='msg' id="msg">Agora são horas</div>
           </div>
-          <div id="segundaparte">
+          <div id="segundaparte" className='segundaparte'>
           <img className='img' id="img" src="https://pergunteaopolvo.com.br/static/media/polvo.3253b186.webp" alt=""/>     
           <h1>Escreva duas palavras nos blocos de texto para o polvo escolher</h1>  
           <input type="text" id="Opcao1"/> vs.
           <input type="text" id="Opcao2"/> <br/>
           <button type="button" id="botaodeativar" onClick={funcoes}>Adivinhar</button>  
           <div id="res">Clica no botão de adivinhar</div>
-          <div id="pontuacao">Clique no botão de adivinhar</div>
+          <div id="pontuacao" className='final'>Clique no botão de adivinhar</div>
           </div>
-          </body>
+          </div>
         );
 }
 
