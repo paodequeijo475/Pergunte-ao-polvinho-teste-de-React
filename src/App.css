@@ -1,43 +1,41 @@
-*{
-    color: rgba(0, 0, 0,0.7);
-    font-size: normal pt Arial 20px;
+#App{
+  font-size: 30px;
+  background-size: 100%;
+}
+#paragrafo {
+  font-size: 50px;
 }
 #msg {
-    font: normal 30pt Arial;
+  font-size: 50px;
 }
 body {
-    font: normal 15pt Arial;
-    box-shadow: 5px 5px 10px rgb(56, 56, 56);
-    text-align: center;
+  color: azure;
+  font: normal 15pt Arial;
+  text-align: center;
 }
 button {
-    width: 500px;
-    padding: 10px;
-    background-color: rgb(199, 199, 199);
-    appearance: none;
-    cursor: pointer;
+  color: azure;
+  width: 500px;
+  padding: 10px;
+  background-color: rgba(255, 0, 0, 0.856);
+  cursor: pointer;
 }
 #header {
-    text-align: center;
+  text-align: center;
 }
-#imagemaleatoria {
-    margin-top: 20px;
-    border-radius: 40%;
-    max-width:600px;
-    max-height:600px;
-    width: auto;
-    height: auto;
-    color: rgb(233, 150, 27),rgb(255, 159, 32);
-} 
 #img {
-    max-width:600px;
-    width: auto;
-    max-height:600px;
-    height: auto;
+  max-width:600px;
+  width: auto;
+  max-height:600px;
+  height: auto;
 }
 input {
-    width: 225px;
+  font-size: 20px;
+  width: 225px;
 }
-#rodape {
-    text-align: center;
+#res {
+  font-size: 35px;
+}
+#pontuacao {
+  font-size: 35px;
 }
